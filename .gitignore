@@ -1,0 +1,14 @@
+**/vendor/
+**/var/
+**/contao-manager/
+**/%SystemDrive%/
+**/logs/
+**/cache/
+**/tmp/
+**/modules/
+**/assets/
+**/bundles/
+**/share/
+**/web/
+**/app/
+**/system/

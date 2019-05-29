@@ -1,0 +1,25 @@
+{
+    "type": "project",
+    "require": {
+        "contao/calendar-bundle": "^4.7",
+        "contao/comments-bundle": "^4.7",
+        "contao/conflicts": "*@dev",
+        "contao/faq-bundle": "^4.7",
+        "contao/listing-bundle": "^4.7",
+        "contao/manager-bundle": "4.7.*",
+        "contao/news-bundle": "^4.7",
+        "contao/newsletter-bundle": "^4.7",
+        "madeyourday/contao-rocksolid-slider": "^2.0"
+    },
+    "extra": {
+        "contao-component-dir": "assets"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+        ],
+        "post-update-cmd": [
+            "Contao\\ManagerBundle\\Composer\\ScriptHandler::initializeApplication"
+        ]
+    }
+}
