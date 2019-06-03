@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 03. Jun 2019 um 20:57
+-- Erstellungszeit: 03. Jun 2019 um 21:06
 -- Server-Version: 10.1.40-MariaDB
 -- PHP-Version: 7.3.5
 
@@ -21,6 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `uek4_contao_ne`
 --
+CREATE DATABASE IF NOT EXISTS `uek4_contao_ne` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `uek4_contao_ne`;
 
 -- --------------------------------------------------------
 
@@ -28,6 +30,7 @@ SET time_zone = "+00:00";
 -- Tabellenstruktur für Tabelle `tl_article`
 --
 
+DROP TABLE IF EXISTS `tl_article`;
 CREATE TABLE `tl_article` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -69,6 +72,7 @@ INSERT INTO `tl_article` (`id`, `pid`, `sorting`, `tstamp`, `title`, `alias`, `a
 -- Tabellenstruktur für Tabelle `tl_calendar`
 --
 
+DROP TABLE IF EXISTS `tl_calendar`;
 CREATE TABLE `tl_calendar` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -92,6 +96,7 @@ CREATE TABLE `tl_calendar` (
 -- Tabellenstruktur für Tabelle `tl_calendar_events`
 --
 
+DROP TABLE IF EXISTS `tl_calendar_events`;
 CREATE TABLE `tl_calendar_events` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -145,6 +150,7 @@ CREATE TABLE `tl_calendar_events` (
 -- Tabellenstruktur für Tabelle `tl_calendar_feed`
 --
 
+DROP TABLE IF EXISTS `tl_calendar_feed`;
 CREATE TABLE `tl_calendar_feed` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -165,6 +171,7 @@ CREATE TABLE `tl_calendar_feed` (
 -- Tabellenstruktur für Tabelle `tl_comments`
 --
 
+DROP TABLE IF EXISTS `tl_comments`;
 CREATE TABLE `tl_comments` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -191,6 +198,7 @@ CREATE TABLE `tl_comments` (
 -- Tabellenstruktur für Tabelle `tl_comments_notify`
 --
 
+DROP TABLE IF EXISTS `tl_comments_notify`;
 CREATE TABLE `tl_comments_notify` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -210,6 +218,7 @@ CREATE TABLE `tl_comments_notify` (
 -- Tabellenstruktur für Tabelle `tl_content`
 --
 
+DROP TABLE IF EXISTS `tl_content`;
 CREATE TABLE `tl_content` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -381,6 +390,7 @@ INSERT INTO `tl_content` (`id`, `pid`, `ptable`, `sorting`, `tstamp`, `type`, `h
 -- Tabellenstruktur für Tabelle `tl_cron`
 --
 
+DROP TABLE IF EXISTS `tl_cron`;
 CREATE TABLE `tl_cron` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -405,6 +415,7 @@ INSERT INTO `tl_cron` (`id`, `name`, `value`) VALUES
 -- Tabellenstruktur für Tabelle `tl_faq`
 --
 
+DROP TABLE IF EXISTS `tl_faq`;
 CREATE TABLE `tl_faq` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -438,6 +449,7 @@ CREATE TABLE `tl_faq` (
 -- Tabellenstruktur für Tabelle `tl_faq_category`
 --
 
+DROP TABLE IF EXISTS `tl_faq_category`;
 CREATE TABLE `tl_faq_category` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -460,6 +472,7 @@ CREATE TABLE `tl_faq_category` (
 -- Tabellenstruktur für Tabelle `tl_files`
 --
 
+DROP TABLE IF EXISTS `tl_files`;
 CREATE TABLE `tl_files` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` binary(16) DEFAULT NULL,
@@ -3899,6 +3912,7 @@ INSERT INTO `tl_files` (`id`, `pid`, `tstamp`, `uuid`, `type`, `path`, `extensio
 -- Tabellenstruktur für Tabelle `tl_form`
 --
 
+DROP TABLE IF EXISTS `tl_form`;
 CREATE TABLE `tl_form` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -3933,6 +3947,7 @@ INSERT INTO `tl_form` (`id`, `tstamp`, `title`, `alias`, `jumpTo`, `sendViaEmail
 -- Tabellenstruktur für Tabelle `tl_form_field`
 --
 
+DROP TABLE IF EXISTS `tl_form_field`;
 CREATE TABLE `tl_form_field` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -3982,6 +3997,7 @@ INSERT INTO `tl_form_field` (`id`, `pid`, `sorting`, `tstamp`, `type`, `label`, 
 -- Tabellenstruktur für Tabelle `tl_image_size`
 --
 
+DROP TABLE IF EXISTS `tl_image_size`;
 CREATE TABLE `tl_image_size` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4002,6 +4018,7 @@ CREATE TABLE `tl_image_size` (
 -- Tabellenstruktur für Tabelle `tl_image_size_item`
 --
 
+DROP TABLE IF EXISTS `tl_image_size_item`;
 CREATE TABLE `tl_image_size_item` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4023,6 +4040,7 @@ CREATE TABLE `tl_image_size_item` (
 -- Tabellenstruktur für Tabelle `tl_layout`
 --
 
+DROP TABLE IF EXISTS `tl_layout`;
 CREATE TABLE `tl_layout` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4083,6 +4101,7 @@ INSERT INTO `tl_layout` (`id`, `pid`, `tstamp`, `name`, `rows`, `headerHeight`, 
 -- Tabellenstruktur für Tabelle `tl_log`
 --
 
+DROP TABLE IF EXISTS `tl_log`;
 CREATE TABLE `tl_log` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4151,6 +4170,7 @@ INSERT INTO `tl_log` (`id`, `tstamp`, `source`, `action`, `username`, `text`, `f
 -- Tabellenstruktur für Tabelle `tl_member`
 --
 
+DROP TABLE IF EXISTS `tl_member`;
 CREATE TABLE `tl_member` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4194,6 +4214,7 @@ CREATE TABLE `tl_member` (
 -- Tabellenstruktur für Tabelle `tl_member_group`
 --
 
+DROP TABLE IF EXISTS `tl_member_group`;
 CREATE TABLE `tl_member_group` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4211,6 +4232,7 @@ CREATE TABLE `tl_member_group` (
 -- Tabellenstruktur für Tabelle `tl_module`
 --
 
+DROP TABLE IF EXISTS `tl_module`;
 CREATE TABLE `tl_module` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4411,6 +4433,7 @@ INSERT INTO `tl_module` (`id`, `pid`, `tstamp`, `name`, `headline`, `type`, `lev
 -- Tabellenstruktur für Tabelle `tl_news`
 --
 
+DROP TABLE IF EXISTS `tl_news`;
 CREATE TABLE `tl_news` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4464,6 +4487,7 @@ INSERT INTO `tl_news` (`id`, `pid`, `tstamp`, `headline`, `alias`, `author`, `da
 -- Tabellenstruktur für Tabelle `tl_newsletter`
 --
 
+DROP TABLE IF EXISTS `tl_newsletter`;
 CREATE TABLE `tl_newsletter` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4489,6 +4513,7 @@ CREATE TABLE `tl_newsletter` (
 -- Tabellenstruktur für Tabelle `tl_newsletter_blacklist`
 --
 
+DROP TABLE IF EXISTS `tl_newsletter_blacklist`;
 CREATE TABLE `tl_newsletter_blacklist` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4501,6 +4526,7 @@ CREATE TABLE `tl_newsletter_blacklist` (
 -- Tabellenstruktur für Tabelle `tl_newsletter_channel`
 --
 
+DROP TABLE IF EXISTS `tl_newsletter_channel`;
 CREATE TABLE `tl_newsletter_channel` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4517,6 +4543,7 @@ CREATE TABLE `tl_newsletter_channel` (
 -- Tabellenstruktur für Tabelle `tl_newsletter_recipients`
 --
 
+DROP TABLE IF EXISTS `tl_newsletter_recipients`;
 CREATE TABLE `tl_newsletter_recipients` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4532,6 +4559,7 @@ CREATE TABLE `tl_newsletter_recipients` (
 -- Tabellenstruktur für Tabelle `tl_news_archive`
 --
 
+DROP TABLE IF EXISTS `tl_news_archive`;
 CREATE TABLE `tl_news_archive` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4562,6 +4590,7 @@ INSERT INTO `tl_news_archive` (`id`, `tstamp`, `title`, `jumpTo`, `protected`, `
 -- Tabellenstruktur für Tabelle `tl_news_feed`
 --
 
+DROP TABLE IF EXISTS `tl_news_feed`;
 CREATE TABLE `tl_news_feed` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4582,6 +4611,7 @@ CREATE TABLE `tl_news_feed` (
 -- Tabellenstruktur für Tabelle `tl_opt_in`
 --
 
+DROP TABLE IF EXISTS `tl_opt_in`;
 CREATE TABLE `tl_opt_in` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4601,6 +4631,7 @@ CREATE TABLE `tl_opt_in` (
 -- Tabellenstruktur für Tabelle `tl_opt_in_related`
 --
 
+DROP TABLE IF EXISTS `tl_opt_in_related`;
 CREATE TABLE `tl_opt_in_related` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4614,6 +4645,7 @@ CREATE TABLE `tl_opt_in_related` (
 -- Tabellenstruktur für Tabelle `tl_page`
 --
 
+DROP TABLE IF EXISTS `tl_page`;
 CREATE TABLE `tl_page` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4688,6 +4720,7 @@ INSERT INTO `tl_page` (`id`, `pid`, `sorting`, `tstamp`, `title`, `alias`, `type
 -- Tabellenstruktur für Tabelle `tl_remember_me`
 --
 
+DROP TABLE IF EXISTS `tl_remember_me`;
 CREATE TABLE `tl_remember_me` (
   `series` char(88) COLLATE utf8mb4_unicode_ci NOT NULL,
   `value` char(88) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -4702,6 +4735,7 @@ CREATE TABLE `tl_remember_me` (
 -- Tabellenstruktur für Tabelle `tl_rocksolid_slide`
 --
 
+DROP TABLE IF EXISTS `tl_rocksolid_slide`;
 CREATE TABLE `tl_rocksolid_slide` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4746,6 +4780,7 @@ CREATE TABLE `tl_rocksolid_slide` (
 -- Tabellenstruktur für Tabelle `tl_rocksolid_slider`
 --
 
+DROP TABLE IF EXISTS `tl_rocksolid_slider`;
 CREATE TABLE `tl_rocksolid_slider` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4768,6 +4803,7 @@ INSERT INTO `tl_rocksolid_slider` (`id`, `tstamp`, `name`, `type`, `multiSRC`, `
 -- Tabellenstruktur für Tabelle `tl_search`
 --
 
+DROP TABLE IF EXISTS `tl_search`;
 CREATE TABLE `tl_search` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -4795,6 +4831,7 @@ INSERT INTO `tl_search` (`id`, `pid`, `tstamp`, `title`, `url`, `text`, `filesiz
 -- Tabellenstruktur für Tabelle `tl_search_index`
 --
 
+DROP TABLE IF EXISTS `tl_search_index`;
 CREATE TABLE `tl_search_index` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5026,6 +5063,7 @@ INSERT INTO `tl_search_index` (`id`, `pid`, `word`, `relevance`, `language`) VAL
 -- Tabellenstruktur für Tabelle `tl_style`
 --
 
+DROP TABLE IF EXISTS `tl_style`;
 CREATE TABLE `tl_style` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5101,6 +5139,7 @@ INSERT INTO `tl_style` (`id`, `pid`, `sorting`, `tstamp`, `selector`, `category`
 -- Tabellenstruktur für Tabelle `tl_style_sheet`
 --
 
+DROP TABLE IF EXISTS `tl_style_sheet`;
 CREATE TABLE `tl_style_sheet` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5126,6 +5165,7 @@ INSERT INTO `tl_style_sheet` (`id`, `pid`, `tstamp`, `name`, `embedImages`, `cc`
 -- Tabellenstruktur für Tabelle `tl_theme`
 --
 
+DROP TABLE IF EXISTS `tl_theme`;
 CREATE TABLE `tl_theme` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5152,6 +5192,7 @@ INSERT INTO `tl_theme` (`id`, `tstamp`, `name`, `author`, `folders`, `screenshot
 -- Tabellenstruktur für Tabelle `tl_undo`
 --
 
+DROP TABLE IF EXISTS `tl_undo`;
 CREATE TABLE `tl_undo` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5168,6 +5209,7 @@ CREATE TABLE `tl_undo` (
 -- Tabellenstruktur für Tabelle `tl_user`
 --
 
+DROP TABLE IF EXISTS `tl_user`;
 CREATE TABLE `tl_user` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5236,6 +5278,7 @@ INSERT INTO `tl_user` (`id`, `tstamp`, `username`, `name`, `email`, `language`, 
 -- Tabellenstruktur für Tabelle `tl_user_group`
 --
 
+DROP TABLE IF EXISTS `tl_user_group`;
 CREATE TABLE `tl_user_group` (
   `id` int(10) UNSIGNED NOT NULL,
   `tstamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
@@ -5281,6 +5324,7 @@ INSERT INTO `tl_user_group` (`id`, `tstamp`, `name`, `modules`, `themes`, `pagem
 -- Tabellenstruktur für Tabelle `tl_version`
 --
 
+DROP TABLE IF EXISTS `tl_version`;
 CREATE TABLE `tl_version` (
   `id` int(10) UNSIGNED NOT NULL,
   `pid` int(10) UNSIGNED NOT NULL DEFAULT '0',
